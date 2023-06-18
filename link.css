@@ -1,0 +1,42 @@
+#home{
+ background-image: url(images/bg2.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+display: flex;
+justify-content: center;
+min-height: 100vh;
+}
+
+.content{
+    margin-right: 6%;
+    margin-top: 12%;
+    color: #ffff;
+
+}
+.navbar {
+    font-size: 1.3vw;
+    font-weight: 600;
+    background-color: #bdfff6;
+}
+
+.navbar-nav li {
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+.content h1{
+    font-size: 4vw;
+}
+.content p{
+ font-size: 2vw;
+ font-weight: bolder;
+}
+#love-button{
+    font-size: 2vw;
+    
+}
+.navbar-brand{
+    font-size: 2vw;
+ font-weight: bold;
+}

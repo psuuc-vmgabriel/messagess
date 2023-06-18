@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Forgot Password | Love Link</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+    body {font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #e2a1a1, #e7c7c7);
+    }
+
+#form {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.lock-icon {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 12px;
+}
+
+.passInput {
+    margin-top: 15px;
+    width: 80%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #b83e3a;
+    font-size: 15px;
+    color: white;
+    outline: none;
+}
+
+button {
+    margin-top: 15px;
+    width: 80%;
+    background-color: #b83e3a;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+hr {
+  border: 1px solid #920505;
+  margin-bottom: 25px;
+}
+    </style>
+</head>
+
+<body>
+    
+    <form id="form">
+        <form method="post" id="form">
+        <p style="text-align: center; font-size: 30px; color: black; font-weight:bolder;">Create New Password</p>
+        <hr>
+                  <div class="mb-6"style="text-align: center; color: black; font-weight:bolder;">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Enter Your Email"
+                      required=""
+                    />
+                  </div>
+                  <div class="mb-6"style="text-align: center; color: black; font-weight:bolder;">
+                    <label for="password" class="form-label"
+                      >New Password</label
+                    >
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      name="password"
+                      placeholder="Enter New Password"
+                      required=""
+                    />
+                  </div>
+                  <div class="mb-3"style="text-align: center; color: black; font-weight:bolder;">
+                    <label for="confirm-password" class="form-label"
+                      >Confirm Password</label
+                    >
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      class="form-control"
+                      name="confirm-password"
+                      placeholder="Confirm New Password"
+                      required=""
+                    />
+                  </div>
+
+                  <button>Reset Password</a></button>
+                </form>
+      
+      <script>
+      var newpassword="gabriel123";
+var emaildeclared = "vmgabriel@gmail.com";
+
+const form=document.getElementById("form");
+const email = document.getElementById("email");
+const newpass = document.getElementById("password");
+const confirmpass = document.getElementById("confirm-password");
+
+
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+  const emailused = email.value;
+  const npass = newpass.value;
+  const cpass = confirmpass.value;
+
+
+  if (emaildeclared === emailused) {
+    if(npass.length<8){
+      alert("The password should be at least 8 characters long");
+    }
+    else{
+
+      if(npass===cpass){
+        alert("Changed Password Successfully!");
+        window.location.href="login.html"
+      }
+      else{
+        alert("The password and confirm password is not match")
+      }
+       
+    }
+
+    
+  } else {
+    alert("Email address is not registered");
+
+  }
+});
+</script>
+</body>
+
+</html>

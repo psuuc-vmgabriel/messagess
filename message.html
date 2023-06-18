@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"id="Home">
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESSAGES</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+$green: #86BB71;
+$blue: #94C2ED;
+$orange: #E38968;
+$gray: #92959E;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #C5DDEB;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  padding: 40px 0;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 750px;
+  background: #444753;
+  border-radius: 5px;
+}
+
+.people-list {
+  width:260px;
+  float: left;
+  
+  .search {
+    padding: 20px;
+  }
+    </style>
+    
+</head>
+<body>
+      <div class="container clearfix">
+    <div class="people-list" id="people-list">
+      <div class="search">
+        <input type="text" placeholder="search" />
+        <i class="fa fa-search"></i>
+      </div>
+      <ul class="list">
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Vincent Porter</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Aiden Chavez</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 7 mins ago
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+          <div class="about">
+   
+   <script >
+       
+             
+    getRandomItem: function(arr) {
+      return arr[Math.floor(Math.random()*arr.length)];
+    }
+    
+  };
+  
+  chat.init();
+  
+  var searchFilter = {
+    options: { valueNames: ['name'] },
+    init: function() {
+      var userList = new List('people-list', this.options);
+      var noItems = $('<li id="no-items-found">No items found</li>');
+      
+      userList.on('updated', function(list) {
+        if (list.matchingItems.length === 0) {
+          $(list.list).append(noItems);
+        } else {
+          noItems.detach();
+        }
+      });
+    }
+  };
+  
+  searchFilter.init();
+  
+})();
+
+   </script>
+    
+</body>
+</html>

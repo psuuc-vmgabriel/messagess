@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <title>Login</title>
+        <style>
+            
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+ 
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #920505;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #920505;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background:  #c93232;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background:  #c93232;
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+.regbtn {
+    background:  #c93232;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+  text-align: center;
+ margin-left: 140px;
+}
+hr {
+  border: 1px solid #ac1313;
+  margin-bottom: 25px;
+}
+
+        </style>
+    </head>
+
+    <body>
+
+        <!--nav bar-->
+     <section class="navigation ">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
+          <a a class="navbar-brand" href="#"    style="color:#c44953"
+          >
+            <img
+              src="images/logo1.png"
+              alt="Logo"
+              width="60"
+              height="50"
+
+              class="d-inline-block align-items-center "><strong> Love<span class="text-dark">Link</span></strong></a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#help">Help</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <a href="login.html" style="text-decoration: none; color:black;"><button class="btn btn-danger" type="submit">Login</a> </button>        
+            </form>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+<div class="bg" style="
+        background-image: url(images/imgg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        min-height: 100vh;">
+        <div>
+        
+
+  <div class="container">
+    <div class="title" style="color: #ac1313; text-align: center; font-size:50px;">Registration</div>
+    <hr>
+    <div class="content">
+      <form action="#" id="form">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name"  id="fullname">
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="text" placeholder="Enter your username"  id="age">
+          </div>
+         
+          
+          
+          
+          <div class="input-box">
+            <span class="details">Birthday</span>
+            <input type="date" placeholder="Enter your birthday" >
+          </div>
+          <div class="input-box">
+                    <label for="country" class="form-label"style="font-weight:bolder">Country</label>
+                    <input
+                      type="text"
+                      id="country"
+                      class="form-control"
+                      name="country"
+                      placeholder="Enter Your Country"
+                      
+                    />
+                  </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        
+            <div class="mb-3">
+                  
+                  <div class="mb-3 d-grid">
+                    <button type="submit" class="btn btn-danger">
+                      Submit
+                    </button>
+      </form>
+    </div>
+  </div>
+    </div>
+  </div>
+  
+   
+
+    
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"
+  ></script>
+  
+  <script >
+      
+      const form = document.getElementById("form");
+const fullname = document.getElementById("fullname");
+const username = document.getElementById("age");
+const number = document.getElementById("number");
+const address = document.getElementById("address");
+
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const fullname1 = fullname.value;
+  const age1 = parseInt(age.value);
+  
+  const country1 = country.value;
+
+  if (fullname1 === "") {
+    alert("Please provide your Fullname");
+    return; // Stop execution if fullname is empty
+  }
+  
+  if (age1 === "") {
+    alert("Please provide your age");
+    return; // Stop execution if age is empty
+  }
+  
+  if (!/^\d+$/.test(age1)) {
+    alert("Age must be a number");
+    return; // Stop execution if age is not a number
+  }
+   if (country1 === "") {
+    alert("Please provide your Country");
+    return; // Stop execution if fullname is empty
+  }
+  
+  
+  alert("Welcome to LoveLink!");
+  window.location.href = "Dashboard.html";
+});
+  </script>
+
+    </body>
+</html>
